@@ -9,7 +9,7 @@ class Controller{
     View *td;
     int numPlayers;
     Player *players[8];
-    char *symbols; //might need to remove
+    char *symbols;
     bool firstTime;
     Player *yourTurn;
     int turn;
@@ -18,7 +18,7 @@ class Controller{
     void next();
     void createPlayer(int i,std::string s,char c);
     void play(); //TODO not finished yet
-    void setPlayers(int i);
+    void setPlayers();
     void setPlayerNames();
     Controller();
 };

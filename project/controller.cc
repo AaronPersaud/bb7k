@@ -24,9 +24,9 @@ void Controller::createPlayer(int i,string s,char c) {
   players[i] = p;
 }
 
-void Controller::makeArray() {
+void Controller::makeArray() { //segfault error when this is called
   symbols = new char[numPlayers + 1];
-  for(int i=0;i < numPlayers+1; i++) {
+  for(int i=0;i < numPlayers + 1; i++) {
     if (i == numPlayers) {
       symbols[i] = '\0';
     }
@@ -36,12 +36,12 @@ void Controller::makeArray() {
   }
 }
 
-void Controller::setPlayers(int i) {
-  td->setNumOfPlayers(numPlayers);
+void Controller::setPlayers() {
+  td->setNumOfPlayers();
 }
 
 void Controller::setPlayerNames() {
-  td->setPlayer(symbols,numPlayers);
+  td->setPlayer(symbols);
 }
 void Controller::play() {
   cin >> numPlayers; 
@@ -65,7 +65,7 @@ void Controller::play() {
   while (cin >> cmd) {
     if(cmd == "roll") {
     //TODO
-    setPlayerNames();
+    setPlayerNames(); //giving segfault error
     }
     else if(cmd == "next") {
       next();
