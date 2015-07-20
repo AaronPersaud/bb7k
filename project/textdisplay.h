@@ -178,10 +178,10 @@ class TextDisplay: public View {
   public:
   char *players;
   TextDisplay();
-   ~TextDisplay(); //virtual
+  virtual ~TextDisplay(); //virtual
     int getNumOfPlayers();
-     void setNumOfPlayers(int); //virtual
-     void setPlayer(char*); //virtual
+  virtual void setNumOfPlayers(int); //virtual
+  virtual void setPlayer(char*); //virtual
     void startGame();
     void move(char, std::string&);
     void movePlayer(int, int);
@@ -189,7 +189,7 @@ class TextDisplay: public View {
     void removePlayer(int, int);
     void improve(int, std::string&);
     void improvement(int, int);
-     void printBoard(); //virtual
+  virtual void printBoard(); //virtual
 };
 
 #endif

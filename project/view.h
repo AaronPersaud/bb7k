@@ -11,6 +11,7 @@ class View {
     virtual void setNumOfPlayers(int) = 0; 
     virtual void setPlayer(char*) = 0;
     virtual ~View() = 0;
+    virtual void improvement(int, int) = 0;
 };
 
 #endif

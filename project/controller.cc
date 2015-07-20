@@ -19,6 +19,10 @@ void Controller::next() {
   }
 }
 
+void Controller::notify(int x,int y) {
+  td->improvement(x, y);
+}
+
 void Controller::createPlayer(int i,string s,char c) {
   Player * p = new Player;
   p->setName(s);
