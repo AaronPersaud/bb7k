@@ -4,7 +4,9 @@
 
 using namespace std;
 
-Controller::Controller() {}
+Controller::Controller(){
+  td = NULL;
+}
 
 void Controller::next() {
   if (turn == numPlayers) {
@@ -24,7 +26,7 @@ void Controller::createPlayer(int i,string s,char c) {
   players[i] = p;
 }
 
-void Controller::makeArray() { //segfault error when this is called
+void Controller::makeArray() { 
   symbols = new char[numPlayers + 1];
   for(int i=0;i < numPlayers + 1; i++) {
     if (i == numPlayers) {
@@ -32,18 +34,20 @@ void Controller::makeArray() { //segfault error when this is called
     }
     else{
       symbols[i] = players[i]->getToken();
+      //cout << symbols[i] << " " << players[i]->getToken() << endl; testing purposes
 }
   }
 }
 
 void Controller::setPlayers() {
-  td->setNumOfPlayers();
+  td->setNumOfPlayers(numPlayers);
 }
 
 void Controller::setPlayerNames() {
   td->setPlayer(symbols);
 }
 void Controller::play() {
+  this->td = new TextDisplay;
   cin >> numPlayers; 
   for(int i=0; i < 8; i++) {
     if (i < numPlayers) {
@@ -58,14 +62,16 @@ void Controller::play() {
     }
   }
   makeArray();
+  setPlayers();
+  setPlayerNames();
   yourTurn = players[0];
   turn = 1;
+  td->startGame();
   cout << yourTurn->getName() << ", let's start the game! " << yourTurn->getToken() << endl;  
   string cmd;
   while (cin >> cmd) {
     if(cmd == "roll") {
     //TODO
-    setPlayerNames(); //giving segfault error
     }
     else if(cmd == "next") {
       next();

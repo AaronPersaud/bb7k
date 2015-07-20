@@ -1,4 +1,6 @@
 #include "controller.h"
+#include "textdisplay.h"
+#include "view.h"
 
 #include <iostream> //remove after testing
 

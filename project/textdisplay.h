@@ -4,7 +4,7 @@
 #include <string>
 #include "view.h"
 
-class TextDisplay {
+class TextDisplay: public View {
 
 	int numOfPlayers;
 	//char* players;
@@ -178,11 +178,10 @@ class TextDisplay {
   public:
   char *players;
   TextDisplay();
-  ~TextDisplay();
-
+   ~TextDisplay(); //virtual
     int getNumOfPlayers();
-    void setNumOfPlayers(int);
-    void setPlayer(char*);
+     void setNumOfPlayers(int); //virtual
+     void setPlayer(char*); //virtual
     void startGame();
     void move(char, std::string&);
     void movePlayer(int, int);
@@ -190,7 +189,7 @@ class TextDisplay {
     void removePlayer(int, int);
     void improve(int, std::string&);
     void improvement(int, int);
-    void printBoard();
+     void printBoard(); //virtual
 };
 
 #endif

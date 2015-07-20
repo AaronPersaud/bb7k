@@ -182,6 +182,8 @@ void TextDisplay::setNumOfPlayers(int num) {
 
 int TextDisplay::getNumOfPlayers() {return numOfPlayers;}
 
+View::~View() {}
+
 void TextDisplay::setPlayer(char* player) {
 	for (int i = 0; i < numOfPlayers; i++) {
 		*(players + i) = *(player + i);

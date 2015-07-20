@@ -1,12 +1,16 @@
 #include "player.h"
 #include "view.h"
+#include "textdisplay.h"
 #ifndef CONTROLLER
 #define CONTROLLER
+
+class View;
 
 class Controller{
   protected:
     //Board *gameBoard;
     View *td;
+    //TextDisplay *td;
     int numPlayers;
     Player *players[8];
     char *symbols;
