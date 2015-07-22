@@ -9,7 +9,7 @@ class Residence: public Square{
   Player *owners[4];
 //  std::string getOwner() {} //TODO
 //  std::string getBlock() {} //TODO
-    
+  void set(Player* player, int improves);    
 };
 
 #endif

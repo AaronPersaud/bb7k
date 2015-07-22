@@ -20,3 +20,13 @@ int Gym::getTuition() {
     cout << "Error encountered" << endl;
   }
 }
+
+void Gym::set(Player* player, int improves) {
+  owner = player;
+//  if (owner == NULL) {
+//    cout << "NULL" << " ";
+//  }
+//  else{
+//    cout << owner->getName() << endl;
+//  }
+}

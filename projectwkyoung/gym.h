@@ -9,6 +9,7 @@ class Gym: public Square{
   Player *owners[2];
 //  std::string getOwner() {}
 //  std::string getBlock() {}
+  void set(Player* player, int improves);
 };
 
 #endif

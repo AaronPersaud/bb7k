@@ -16,6 +16,7 @@ class Square{
   ~Square();
   virtual std::string getBuildingName();
   virtual void setOwner(Player* player);
+  virtual void set(Player* player, int improves);
 };
 
 #endif

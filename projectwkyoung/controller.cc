@@ -23,6 +23,17 @@ Controller::~Controller() {
   }
 }
 
+void Controller::setBuilding(string b, string o, int i) {
+  Player *a = NULL;
+  for(int j=0; j<numPlayers;j++) {
+   if(players[j]->getName() == o) {
+     a = players[j]; 
+     break;
+   }
+  }
+  gameBoard->set(b,a,i);
+} 
+
 void Controller::next() {
   if (turn == numPlayers) {
     turn = 1;
@@ -138,6 +149,14 @@ void Controller::load(string file) {
   setPlayerNames();
   for(int i=0; i < numPlayers;i++) {
     td->movePlayer(i+1,players[i]->getCurrentPosition());
+  }
+  for(int i=0; i < 28;i++) {
+    string building;
+    string owner;
+    int improvements;
+    ifs >> building >> owner >> improvements;
+    setBuilding(building,owner,improvements);
+   // cout << building << " " <<  owner << " " << improvements << endl; //for testing
   }
   yourTurn = players[0];
   turn = 1;

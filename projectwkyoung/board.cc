@@ -22,6 +22,96 @@ Board::~Board() {
   delete squares;
 }
 
+void Board::set(string b, Player* p, int im) {
+  if(b == "AL") {
+    squares[1]->set(p,im);
+  }
+  else if(b == "ML") {
+    squares[3]->set(p,im);
+  }
+  else if(b == "MKV") {
+    squares[5]->set(p,im);
+  }
+  else if(b == "ECH") {
+    squares[6]->set(p,im);
+  }
+  else if(b == "PAS") {
+    squares[8]->set(p,im);
+  }
+  else if(b == "HH") {
+    squares[9]->set(p,im);
+  }
+  else if(b == "RCH") {
+    squares[11]->set(p,im);
+  }
+  else if(b == "PAC") {
+    squares[12]->set(p,im);
+  }
+  else if(b == "DWE") {
+    squares[13]->set(p,im);
+  }
+  else if(b == "CPH") {
+    squares[14]->set(p,im);
+  }
+  else if(b == "UWP") {
+    squares[15]->set(p,im);
+  }
+  else if(b == "LHI") {
+    squares[16]->set(p,im);
+  }
+  else if(b == "BMH") {
+    squares[18]->set(p,im);
+  }
+  else if(b == "OPT") {
+    squares[19]->set(p,im);
+  }
+  else if(b == "EV1") {
+    squares[21]->set(p,im);
+  }
+  else if(b == "EV2") {
+    squares[23]->set(p,im);
+  }
+  else if(b == "EV3") {
+    squares[24]->set(p,im);
+  }
+  else if(b == "V1") {
+    squares[25]->set(p,im);
+  }
+  else if(b == "PHYS") {
+    squares[26]->set(p,im);
+  }
+  else if(b == "B1") {
+    squares[27]->set(p,im);
+  }
+  else if(b == "CIF") {
+    squares[28]->set(p,im);
+  }
+  else if(b == "B2") {
+    squares[29]->set(p,im);
+  }
+  else if(b == "EIT") {
+    squares[31]->set(p,im);
+  }
+  else if(b == "ESC") {
+    squares[32]->set(p,im); 
+  }
+  else if(b == "C2") {
+    squares[34]->set(p,im);
+  }
+  else if(b == "REV") {
+    squares[35]->set(p,im);
+  }
+  else if(b == "MC") {
+    squares[37]->set(p,im);
+  }
+  else if(b == "DC") {
+    squares[39]->set(p,im);
+  }
+  else{
+    cout << "Error!" << endl;
+  }
+}
+
 void Board::improve() {} //TODO
 
 void Board::mortgage() {} //TODO

@@ -27,6 +27,7 @@ class Controller{
     void createPlayer(int i,std::string s,char c);
     void play(); //TODO not finished yet
     void setPlayers();
+    void setBuilding(std::string,std::string,int);
     void setPlayerNames();
     Controller();
     ~Controller();

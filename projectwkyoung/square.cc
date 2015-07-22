@@ -14,5 +14,7 @@ string Square::getBuildingName() {} //TODO
 
 void Square::setOwner(Player*) {} //TODO
 
+void Square::set(Player* player, int improves) {}
+
 Square::Square() {}
 Square::~Square() {}

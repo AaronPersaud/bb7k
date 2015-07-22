@@ -36,6 +36,7 @@ class Building: public Square{
   virtual int getTuition();
   void setEverything(std::string bN,std::string bl,int loc,int c,int t,int t0,int t1,int t2,int t3,int t4,int t5,int nI,bool isitowned,bool mor,char *pl,bool mon,       int cOI);
   void setMonopolied();
+  void set(Player* player, int improves);
   std::string getOwner() {} //TODO
   std::string getBlock() {} //TODO
 };

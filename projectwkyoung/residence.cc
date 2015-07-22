@@ -14,3 +14,13 @@ int Residence::getTuition() {
   }
   return pow(2,count) * 25;
 }
+
+void Residence::set(Player* player, int improves) {
+  owner = player;
+  //if (owner == NULL) {
+  //  cout << "NULL" << " ";
+  //}
+  //else{
+  //  cout << owner->getName() << endl;
+  //}
+} 

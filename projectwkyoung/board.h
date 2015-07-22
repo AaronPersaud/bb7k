@@ -4,6 +4,7 @@
 #include <string>
 #include "square.h"
 #include "controller.h"
+#include "player.h"
 
 class Board {
 	int numOfPlayers;
@@ -31,7 +32,8 @@ public:
         void callTimsLine();
 	void useRollUpTheRim();
         void payMoneyTims();
-	void rollDice();  
+	void rollDice();
+        void set(std::string b, Player* owner, int im); 
 };
 
 #endif 
