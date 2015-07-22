@@ -1,6 +1,7 @@
 #ifndef SQUARE
 #define SQUARE
 #include <string>
+#include "player.h" // had to add this
 
 class Square{
   protected:
@@ -13,6 +14,8 @@ class Square{
   virtual void setMonopolied() {}
   Square();
   ~Square();
+  virtual std::string getBuildingName();
+  virtual void setOwner(Player* player);
 };
 
 #endif

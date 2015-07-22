@@ -11,7 +11,16 @@
 
 using namespace std;
 
-Board::Board() {}
+Board::Board() {
+  squares = NULL;
+  notification = NULL;}
+
+Board::~Board() {
+  for(int i =0;i<40;i++){
+    delete squares[i];
+  }
+  delete squares;
+}
 
 void Board::improve() {} //TODO
 

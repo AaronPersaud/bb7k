@@ -1,5 +1,6 @@
 // this class is temporary, should be removed later
 #include "square.h"
+#include <string>
 
 using namespace std;
 
@@ -8,6 +9,10 @@ using namespace std;
 //string Square::getBlock() {}
 
 //void Square::setMonopolied() {}
+
+string Square::getBuildingName() {} //TODO
+
+void Square::setOwner(Player*) {} //TODO
 
 Square::Square() {}
 Square::~Square() {}

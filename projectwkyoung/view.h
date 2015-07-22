@@ -12,6 +12,7 @@ class View {
     virtual void setPlayer(char*) = 0;
     virtual ~View() = 0;
     virtual void improvement(int, int) = 0;
+    virtual void movePlayer(int, int) = 0;
 };
 
 #endif

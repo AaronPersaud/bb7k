@@ -8,7 +8,9 @@ void Player::setCurrentPosition(int i) {} //TODO
   
 void Player::setPrevPosition(int i) {} //TODO
   
-int Player::getCurrentPosition() {} //TODO
+int Player::getCurrentPosition() {
+  return position;
+}
 
 void Player::setName(string s) {
   name = s;
@@ -25,3 +27,11 @@ char Player::getToken() {
 }
 
 int Player::getTuition(int i) {}//TODO
+
+void Player::set(int m,int R,int p,bool D,int DC) {
+  money = m;
+  RolluptheRimCup = R;
+  position = p;
+  DCTimsLine = D;
+  DCTurns = DC;
+}

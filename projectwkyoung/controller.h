@@ -2,6 +2,8 @@
 #include "view.h"
 #include "textdisplay.h"
 #include "board.h"
+#include <string>
+#include <fstream>
 #ifndef CONTROLLER
 #define CONTROLLER
 
@@ -27,6 +29,9 @@ class Controller{
     void setPlayers();
     void setPlayerNames();
     Controller();
+    ~Controller();
+    void noParameter();
+    void load(std::string file);
 };
 
 #endif

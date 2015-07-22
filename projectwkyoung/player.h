@@ -10,6 +10,9 @@ class Player{
   bool mortgaged[40];
   int RolluptheRimCup;
   std::string name;
+  int position;
+  bool DCTimsLine;
+  int DCTurns;
   public:
   void setToken(char c);
   void setName(std::string s);
@@ -20,6 +23,7 @@ class Player{
   void setCurrentPosition(int i);
   void setPrevPosition(int i);
   int getCurrentPosition();
+  void set(int m,int R,int p,bool D,int DC);
 };
 
 #endif
