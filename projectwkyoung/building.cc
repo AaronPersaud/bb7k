@@ -10,13 +10,18 @@ void Building::notify(std::string buildingName,int improvement) {
 void Building::set(Player* player, int improves) {
   owner = player;
   numImprovements = improves;
-  //if (owner == NULL) {
-  //  cout << "NULL" << " ";
-  //}
-  //else{
-  //  cout << owner->getName() << " ";
-  //}
-  //cout << numImprovements << endl;
+}
+
+int Building::getImprovements() {
+  return numImprovements;
+}
+string Building::getOwner() {
+  if (owner == NULL) {
+    return "BANK";
+  }
+  else{
+    return owner->getName();
+  }
 }
 
 void Building::setEverything(string bN,string bl,int loc,int c,int t,int t0,int t1,int t2,int t3,int t4,int t5,int nI,bool isitowned,bool mor,char *pl,bool mon,int cOI) {

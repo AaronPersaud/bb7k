@@ -8,7 +8,7 @@
 
 class Board {
 	int numOfPlayers;
-	Square** squares;
+	//Square** squares; might need to change back
 	Controller* notification;
 
 public:
@@ -20,7 +20,7 @@ public:
 	bool checkMonopoly(const std::string);
 	void setMonopoly(const std::string);
 	//int numOfOwn(char);
-	//Square** squares;
+	Square** squares;
 	int getTuition(int i); 
 	void improve();
 	void mortgage();

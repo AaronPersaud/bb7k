@@ -33,6 +33,7 @@ class Controller{
     ~Controller();
     void noParameter();
     void load(std::string file);
+    void save(std::string filename);
 };
 
 #endif

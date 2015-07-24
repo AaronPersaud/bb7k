@@ -175,6 +175,14 @@ void Board::initSquares() {
   (squares[34])->setEverything("C2",   "Sci2",34,320,28,28,150,450,1000,1200,1400,0,false,false,NULL,false,200);
   (squares[37])->setEverything("MC",   "Math",37,350,35,35,175,500,1100,1300,1500,0,false,false,NULL,false,200);
   (squares[39])->setEverything("DC",   "Math",39,400,50,50,200,600,1400,1700,2000,0,false,false,NULL,false,200);
+  
+  (squares[5])->set(NULL,0);
+  (squares[15])->set(NULL,0);
+  (squares[25])->set(NULL,0);
+  (squares[35])->set(NULL,0);
+
+  (squares[12])->set(NULL,0);
+  (squares[28])->set(NULL,0);
 }
 
 void Board::init(int players, Controller* gameNotification) {

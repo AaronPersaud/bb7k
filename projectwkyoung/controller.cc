@@ -53,6 +53,8 @@ void Controller::createPlayer(int i,string s,char c) {
   Player * p = new Player;
   p->setName(s);
   p->setToken(c);
+  p->setCurrentPosition(0);
+  p->setMoney(1500);
   players[i] = p;
 }
 
@@ -164,6 +166,50 @@ void Controller::load(string file) {
   play();
 }
 
+void Controller::save(string filename) {
+  ofstream ofs(filename.c_str());
+  ofs << numPlayers << endl;
+  for(int i=0;i<numPlayers;i++) {
+    ofs << players[i]->getName() << " " << players[i]->getToken() << " ";
+    ofs << players[i]->getTimsCup() << " " << players[i]->getMoney() << " " << players[i]->getCurrentPosition();
+    if(players[i]->getCurrentPosition() == 10 & players[i]->getTimsLine() == false) {
+      ofs <<" 0";
+    }
+    if(players[i]->getCurrentPosition() == 10 & players[i]->getTimsLine() == true) {
+      ofs << " 1 " << players[i]->getDCTurns();
+    }
+    ofs << endl;
+  }
+  ofs << "AL " <<  gameBoard->squares[1]->getOwner() << " " << gameBoard->squares[1]->getImprovements() << endl;
+  ofs << "ML " <<  gameBoard->squares[3]->getOwner() << " " << gameBoard->squares[3]->getImprovements() << endl;
+  ofs << "MKV " << gameBoard->squares[5]->getOwner() << " " << gameBoard->squares[5]->getImprovements() << endl;
+  ofs << "ECH " <<  gameBoard->squares[6]->getOwner() << " " << gameBoard->squares[6]->getImprovements() << endl;
+  ofs << "PAS " <<  gameBoard->squares[8]->getOwner() << " " << gameBoard->squares[8]->getImprovements() << endl;
+  ofs << "HH " <<  gameBoard->squares[9]->getOwner() << " " << gameBoard->squares[9]->getImprovements() << endl;
+  ofs << "RCH " << gameBoard->squares[11]->getOwner() << " " << gameBoard->squares[11]->getImprovements() << endl;
+  ofs << "PAC " << gameBoard->squares[12]->getOwner() << " " << gameBoard->squares[12]->getImprovements() << endl;
+  ofs << "DWE " << gameBoard->squares[13]->getOwner() << " " << gameBoard->squares[13]->getImprovements() << endl;
+  ofs << "CPH " << gameBoard->squares[14]->getOwner() << " " << gameBoard->squares[14]->getImprovements() << endl;
+  ofs << "UWP " << gameBoard->squares[15]->getOwner() << " " << gameBoard->squares[15]->getImprovements() << endl;
+  ofs << "LHI " << gameBoard->squares[16]->getOwner() << " " << gameBoard->squares[16]->getImprovements() << endl;
+  ofs << "BMH " << gameBoard->squares[18]->getOwner() << " " << gameBoard->squares[18]->getImprovements() << endl;
+  ofs << "OPT " << gameBoard->squares[19]->getOwner() << " " << gameBoard->squares[19]->getImprovements() << endl;
+  ofs << "EV1 " << gameBoard->squares[21]->getOwner() << " " << gameBoard->squares[21]->getImprovements() << endl;
+  ofs << "EV2 " << gameBoard->squares[23]->getOwner() << " " << gameBoard->squares[23]->getImprovements() << endl;
+  ofs << "EV3 " << gameBoard->squares[24]->getOwner() << " " << gameBoard->squares[24]->getImprovements() << endl;
+  ofs << "V1 " << gameBoard->squares[25]->getOwner() <<  " " << gameBoard->squares[25]->getImprovements() << endl;
+  ofs << "PHYS " << gameBoard->squares[26]->getOwner() << " " << gameBoard->squares[26]->getImprovements() << endl;
+  ofs << "B1 " << gameBoard->squares[27]->getOwner() << " " << gameBoard->squares[27]->getImprovements() << endl;
+  ofs << "CIF " << gameBoard->squares[28]->getOwner() << " " << gameBoard->squares[28]->getImprovements() << endl; 
+  ofs << "B2 " << gameBoard->squares[29]->getOwner() << " " << gameBoard->squares[29]->getImprovements() << endl;
+  ofs << "EIT " << gameBoard->squares[31]->getOwner() << " " << gameBoard->squares[31]->getImprovements() << endl;
+  ofs << "ESC " << gameBoard->squares[32]->getOwner() << " " << gameBoard->squares[32]->getImprovements() << endl;
+  ofs << "C2 " << gameBoard->squares[34]->getOwner() << " " << gameBoard->squares[34]->getImprovements() << endl;
+  ofs << "REV "<< gameBoard->squares[35]->getOwner() << " " << gameBoard->squares[35]->getImprovements() << endl;
+  ofs << "MC " << gameBoard->squares[37]->getOwner() << " " << gameBoard->squares[37]->getImprovements() << endl;
+  ofs << "DC " << gameBoard->squares[39]->getOwner() << " " << gameBoard->squares[39]->getImprovements() << endl; 
+}
+
 void Controller::play() {
   cout << yourTurn->getName() << ", let's start the game! " << yourTurn->getToken() << endl;  
   string cmd;
@@ -194,7 +240,10 @@ void Controller::play() {
       gameBoard->assets();
     }
     else if(cmd == "save") {
-    //TODO
+      string filename;
+      cin >> filename;
+      save(filename);
+      break; 
     }
     else {
       cout << "Invalid Command. Please try again." << endl;

@@ -5,6 +5,23 @@
 
 using namespace std;
 
+string Residence::getOwner() {
+  if (owner == NULL) {
+    return "BANK";
+  }
+  else{
+    return owner->getName();
+  }
+}
+
+int Residence::getImprovements() {
+  return improvement;
+}
+
+string Residence::getBuildingName() {
+  return buildingName;
+}
+
 int Residence::getTuition() {
   int count = 0;
   for(int i; i < 4; i++) {
@@ -17,10 +34,5 @@ int Residence::getTuition() {
 
 void Residence::set(Player* player, int improves) {
   owner = player;
-  //if (owner == NULL) {
-  //  cout << "NULL" << " ";
-  //}
-  //else{
-  //  cout << owner->getName() << endl;
-  //}
+  improvement = improves;
 } 

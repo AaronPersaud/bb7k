@@ -2,9 +2,31 @@
 
 using namespace std;
 
-void Player::setMoney(int i) {} //TODO
+Player::Player(): money(0), RolluptheRimCup(0), DCTimsLine(true),DCTurns(0) {}
 
-void Player::setCurrentPosition(int i) {} //TODO
+void Player::setMoney(int i) {
+  money += i;
+}
+
+int Player::getMoney() {
+  return money;
+}
+
+int Player::getTimsCup() {
+  return RolluptheRimCup;
+}
+
+bool Player::getTimsLine() {
+  return DCTimsLine;
+}
+
+int Player::getDCTurns() {
+  return DCTurns;
+}
+
+void Player::setCurrentPosition(int i) {
+  position = i;
+} 
   
 void Player::setPrevPosition(int i) {} //TODO
   

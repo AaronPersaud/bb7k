@@ -14,12 +14,17 @@ class Player{
   bool DCTimsLine;
   int DCTurns;
   public:
+  Player();
   void setToken(char c);
   void setName(std::string s);
   char getToken(); //for testing purposes
   std::string getName(); // for testing purposes
   int getTuition(int i);
   void setMoney(int i);
+  int getMoney();
+  int getTimsCup();
+  bool getTimsLine();
+  int getDCTurns();
   void setCurrentPosition(int i);
   void setPrevPosition(int i);
   int getCurrentPosition();
